@@ -8,6 +8,10 @@ while wait(60) do
 						b:Destroy()
 					end
 				end
+				local newHighlight = Instance.new("Highlight")
+				newHighlight.Parent = game.Workspace[i.Name]
+				newHighlight.FillColor = game.Teams[tostring(i.Team)].TeamColor.Color
+				newHighlight.FillTransparency = 0.8
 				local newGui = Instance.new("BillboardGui")
 				newGui.Parent = game.Workspace:FindFirstChild(i.Name):FindFirstChild("Head")
 				newGui.AlwaysOnTop = false
