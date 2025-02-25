@@ -198,13 +198,13 @@ sound.SoundId = "rbxassetid://6586979979"
 sound.Volume = 1
 
 function LoadPlayerTab()
-	for index, plr in game.Players:GetChildren() do
-		for _, a in SF2_SF:GetChildren() do
-			if a:IsA("Frame") then
-				a:Destroy()
-			end
+	for _, UserFrame in SF2_SF:GetChildren() do
+		if UserFrame:IsA("Frame") then
+			UserFrame:Destroy()
 		end
-		
+	end
+	
+	for index, plr in game.Players:GetChildren() do
 		local child = Gui.TemplateFrame:Clone()
 		child.Parent = SF2_SF
 		child.Size = UDim2.new(1.5, 0, 0.022, 0)
