@@ -199,7 +199,7 @@ sound.Volume = 1
 
 function LoadPlayerTab()
 	for index, plr in game.Players:GetChildren() do
-		for _, a in Gui.TemplateFrame:GetChildren() do
+		for _, a in SF2_SF:GetChildren() do
 			if a:IsA("Frame") then
 				a:Destroy()
 			end
