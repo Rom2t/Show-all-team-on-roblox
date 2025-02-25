@@ -223,7 +223,28 @@ game.Players.PlayerAdded:Connect(function(NewPlayer)
 	LoadPlayerTab()
 	NewPlayer.CharacterAdded:Connect(function(character)
 		if canLoad then
-			LoadCheat()
+			local child = Gui.TemplateFrame:Clone()
+			child.Parent = SF2_SF
+			child.Size = UDim2.new(1.5, 0, 0.022, 0)
+			child.Name = NewPlayer.Name
+			child.TextButton.Text = NewPlayer.Name
+			child.ImageLabel.Image = game.Players:GetUserThumbnailAsync(NewPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+
+			local sound = Instance.new("Sound")
+			sound.Parent = Gui
+			sound.SoundId = "rbxassetid://6586979979"
+			sound.Volume = 1
+
+			local TSInfo = TweenInfo.new(0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+			local anim = TS:Create(child, TSInfo, {Size = UDim2.new(1, 0, 0.011, 0)})
+			child.Visible = true
+			anim:Play()
+			sound:Play()
+			anim.Completed:Wait()
+
+			child.TextButton.MouseButton1Click:Connect(function()
+				plrCam.CameraSubject = game.Players[child.Name].Character
+			end)
 		end
 	end)
 end)
