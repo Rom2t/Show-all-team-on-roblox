@@ -13,6 +13,7 @@ _ = liaison de deux termes, ex: US_TL_CF signifie UiStroke_TextLabel_ChargementF
 ]]
 
 local TS = game:GetService("TweenService")
+local UIS = game:GetService("UserInputService")
 
 local Gui = Instance.new("ScreenGui")
 Gui.Parent = game.Players.LocalPlayer.PlayerGui
@@ -198,12 +199,6 @@ sound.SoundId = "rbxassetid://6586979979"
 sound.Volume = 1
 
 function LoadPlayerTab()
-	for _, UserFrame in SF2_SF:GetChildren() do
-		if UserFrame:IsA("Frame") then
-			UserFrame:Destroy()
-		end
-	end
-	
 	for index, plr in game.Players:GetChildren() do
 		local child = Gui.TemplateFrame:Clone()
 		child.Parent = SF2_SF
@@ -218,15 +213,27 @@ function LoadPlayerTab()
 		anim:Play()
 		sound:Play()
 		anim.Completed:Wait()
-
-		child.TextButton.MouseButton1Click:Connect(function()
-			plrCam.CameraSubject = game.Players[child.Name].Character
-		end)
 	end
 end
 
 game.Players.PlayerAdded:Connect(function(NewPlayer)
-	LoadPlayerTab()
+	if SF2_SF:FindFirstChild(NewPlayer.Name) then
+		
+	else
+		local child = Gui.TemplateFrame:Clone()
+		child.Parent = SF2_SF
+		child.Size = UDim2.new(1.5, 0, 0.022, 0)
+		child.Name = NewPlayer.Name
+		child.TextButton.Text = NewPlayer.Name
+		child.ImageLabel.Image = game.Players:GetUserThumbnailAsync(NewPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+
+		local TSInfo = TweenInfo.new(0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
+		local anim = TS:Create(child, TSInfo, {Size = UDim2.new(1, 0, 0.011, 0)})
+		child.Visible = true
+		anim:Play()
+		sound:Play()
+		anim.Completed:Wait()
+	end
 	
 	NewPlayer.CharacterAdded:Connect(function(character)
 		if canLoad then
@@ -257,6 +264,30 @@ TB_SF:GetPropertyChangedSignal("Text"):Connect(function()
 	for _, UserFrame in SF2_SF:GetChildren() do
 		if UserFrame:IsA("Frame") then
 			UserFrame.Visible = string.find(string.lower(UserFrame.Name), InputText, 1, true) and true or false
+		end
+	end
+end)
+
+for _, UserFrame in SF2_SF:GetChildren() do
+	if UserFrame:IsA("Frame") then
+		UserFrame.TextButton.MouseButton1Click:Connect(function()
+			plrCam.CameraSubject = game.Players[UserFrame.Name].Character
+		end)
+	end
+end
+
+UIS.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Up then
+		if CF.Visible then
+			CF.Visible = false
+		else
+			CF.Visible = true
+		end
+	elseif input.KeyCode == Enum.KeyCode.Left then
+		if SF.Visible then
+			SF.Visible = false
+		else
+			SF.Visible = true
 		end
 	end
 end)
