@@ -1,53 +1,141 @@
+--[[
+TF = TemplateFrame
+IL = ImageLabel
+CF = ChargementFrame
+TL = TextLabel
+UC = UiCorner
+US = UiStroke
+IB = ImageButton
+SF = SearchFrame
+SF2 = ScrollingFrame
+UILL = UIListLayout
+_ = liaison de deux termes, ex: US_TL_CF signifie UiStroke_TextLabel_ChargementFrame
+]]
+
 local TS = game:GetService("TweenService")
 
 local Gui = Instance.new("ScreenGui")
 Gui.Parent = game.Players.LocalPlayer.PlayerGui
 
-local TextLabel = Instance.new("TextLabel")
-TextLabel.Parent = Gui
-TextLabel.Text = "Chargement... Veuillez attendre 60 secs..."
-TextLabel.BackgroundTransparency = 0.5
-TextLabel.BackgroundColor3 = Color3.fromRGB(0,0,0)
-TextLabel.AnchorPoint = Vector2.new(0.5, 0)
-TextLabel.Size = UDim2.new(0.2, 0, 0.08, 0)
-TextLabel.Position = UDim2.new(0.48, 0, 0.1, 0)
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
+local plrCam = game.Workspace.CurrentCamera
 
-local UiCorner = Instance.new("UICorner")
-UiCorner.Parent = TextLabel
-UiCorner.CornerRadius = UDim.new(0.1, 0)
+local TF = Instance.new("Frame")
+TF.Parent = Gui
+TF.Name = "TemplateFrame"
+TF.Visible = false
+TF.Size = UDim2.new(1, 0, 0.011, 0)
+TF.BackgroundTransparency = 1
 
-local UiStroke = Instance.new("UIStroke")
-UiStroke.Parent = TextLabel
-UiStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UiStroke.Thickness = 2
+local TB_TF = Instance.new("TextButton")
+TB_TF.Parent = TF
+TB_TF.BackgroundTransparency = 1
+TB_TF.Position = UDim2.new(0.12, 0, 0, 0)
+TB_TF.Size = UDim2.new(0.88, 0, 1, 0)
+TB_TF.Text = ""
+TB_TF.TextColor3 = Color3.fromRGB(255, 255, 255)
+TB_TF.TextScaled = true
 
-local ImageButton = Instance.new("ImageButton")
-ImageButton.Parent = Gui
-ImageButton.BackgroundTransparency = 1
-ImageButton.Image = "rbxassetid://90667311847904"
-ImageButton.ScaleType = Enum.ScaleType.Fit
-ImageButton.AnchorPoint = Vector2.new(0.5, 0)
-ImageButton.Size = UDim2.new(0.04, 0, 0.08, 0)
-ImageButton.Position = UDim2.new(0.6, 0, 0.1, 0)
+local IL_TF = Instance.new("ImageLabel")
+IL_TF.Parent = TF
+IL_TF.BackgroundTransparency = 1
+IL_TF.Size = UDim2.new(0.12, 0, 1, 0)
+IL_TF.ScaleType = Enum.ScaleType.Fit
 
 local canLoad = false
+
+-------------------------------------------------------------------------------------------
+
+local CF = Instance.new("Frame")
+CF.Parent = Gui
+CF.BackgroundTransparency = 1
+CF.AnchorPoint = Vector2.new(0.5, 0)
+CF.Position = UDim2.new(0.5, 0, 0.1, 0)
+CF.Size = UDim2.new(0.24, 0, 0.08, 0)
+
+local TL_CF = Instance.new("TextLabel")
+TL_CF.Parent = CF
+TL_CF.Text = "Chargement... Veuillez attendre 60 secs..."
+TL_CF.BackgroundTransparency = 0.5
+TL_CF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TL_CF.AnchorPoint = Vector2.new(0.5, 0)
+TL_CF.Size = UDim2.new(0.82, 0, 1, 0)
+TL_CF.Position = UDim2.new(0.41, 0, 0, 0)
+TL_CF.TextColor3 = Color3.fromRGB(255, 255, 255)
+TL_CF.TextScaled = true
+
+local UC_TL_CF = Instance.new("UICorner")
+UC_TL_CF.Parent = TL_CF
+UC_TL_CF.CornerRadius = UDim.new(0.1, 0)
+
+local US_TL_CF = Instance.new("UIStroke")
+US_TL_CF.Parent = TL_CF
+US_TL_CF.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+US_TL_CF.Thickness = 2
+
+local IB_CF = Instance.new("ImageButton")
+IB_CF.Parent = CF
+IB_CF.BackgroundTransparency = 1
+IB_CF.Image = "rbxassetid://90667311847904"
+IB_CF.ScaleType = Enum.ScaleType.Fit
+IB_CF.AnchorPoint = Vector2.new(0.5, 0)
+IB_CF.Size = UDim2.new(0.18, 0, 1, 0)
+IB_CF.Position = UDim2.new(0.91, 0, 0, 0)
+
+-------------------------------------------------------------------------------------------
+
+local SF = Instance.new("Frame")
+SF.Parent = Gui
+SF.BackgroundTransparency = 0.5
+SF.AnchorPoint = Vector2.new(0.5, 0)
+SF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+SF.Position = UDim2.new(0.19, 0, 0.225, 0)
+SF.Size = UDim2.new(0.227, 0, 0.655, 0)
+
+local US_SF = Instance.new("UIStroke")
+US_SF.Parent = SF
+US_SF.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+US_SF.Thickness = 2
+
+local TB_SF = Instance.new("TextBox")
+TB_SF.Parent = SF
+TB_SF.BackgroundTransparency = 0.9
+TB_SF.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TB_SF.Size = UDim2.new(1, 0, 0.1, 0)
+TB_SF.PlaceholderText = "Entres le pseudo d'un joueur..."
+TB_SF.TextColor3 = Color3.fromRGB(255, 255, 255)
+TB_SF.TextScaled = true
+TB_SF.Text = ""
+
+local US_TB_SF = Instance.new("UIStroke")
+US_TB_SF.Parent = TB_SF
+US_TB_SF.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+US_TB_SF.Thickness = 2
+
+local SF2_SF = Instance.new("ScrollingFrame")
+SF2_SF.Parent = SF
+SF2_SF.BackgroundTransparency = 1
+SF2_SF.Position = UDim2.new(0, 0, 0.1, 0)
+SF2_SF.Size = UDim2.new(1, 0, 0.9, 0)
+SF2_SF.CanvasSize = UDim2.new(0, 0, 7, 0)
+
+local UILL_SF2_SF = Instance.new("UIListLayout")
+UILL_SF2_SF.Parent = SF2_SF
+UILL_SF2_SF.SortOrder = Enum.SortOrder.Name
 
 function LoadCheat()
 	canLoad = false
 	for c = 5, 0, -1 do
 		wait(1)
-		TextLabel.Text = "Chargement... Veuillez attendre ".. c .." secs..."
+		TL_CF.Text = "Chargement... Veuillez attendre ".. c .." secs..."
 	end
-	TextLabel.Text = "Chargement en cours..."
+	TL_CF.Text = "Chargement en cours..."
 	wait(0.1)
 	for count = 1, 3 do
 		local TSinfo = TweenInfo.new(1.2, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out)
-		local anim = TS:Create(ImageButton, TSinfo, {Rotation = 360})
+		local anim = TS:Create(CF.ImageButton, TSinfo, {Rotation = 360})
 		anim:Play()
 		anim.Completed:Wait()
-		ImageButton.Rotation = 0
+		CF.ImageButton.Rotation = 0
 		wait(0.3)
 	end
 	
@@ -94,21 +182,46 @@ function LoadCheat()
 			end
 		end
 	end
-	TextLabel.Text = "Chargement finit."
+	
+	for index, plr in game.Players:GetChildren() do
+		local child = Gui.TemplateFrame:Clone()
+		child.Parent = SF2_SF
+		child.Visible = true
+		child.Name = plr.Name
+		child.TextButton.Text = plr.Name
+		child.ImageLabel.Image = game.Players:GetUserThumbnailAsync(plr.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+		child.TextButton.MouseButton1Click:Connect(function()
+			plrCam.CameraSubject = game.Players[child.Name].Character
+		end)
+		wait(.5)
+	end
+	
+	TL_CF.Text = "Chargement finit."
 	canLoad = true
 end
 
 for c = 3, 0, -1 do
 	wait(1)
-	TextLabel.Text = "Chargement du cheat, veuillez attendre ".. c .." secs..."
+	TL_CF.Text = "Chargement du cheat, veuillez attendre ".. c .." secs..."
 end
 
 LoadCheat()
 
-ImageButton.MouseButton1Click:Connect(function()
+IB_CF.MouseButton1Click:Connect(function()
 	if canLoad then
-		ImageButton.Active = false
+		IB_CF.Active = false
 		LoadCheat()
-		ImageButton.Active = true
+		IB_CF.Active = true
+	end
+end)
+
+--TB_TF.MouseButton2Click
+
+TB_SF:GetPropertyChangedSignal("Text"):Connect(function()
+	local InputText = string.lower(TB_SF.Text)
+	for _, UserFrame in SF2_SF:GetChildren() do
+		if UserFrame:IsA("Frame") then
+			UserFrame.Visible = string.find(string.lower(UserFrame.Name), InputText, 1, true) and true or false
+		end
 	end
 end)
