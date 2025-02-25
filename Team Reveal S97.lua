@@ -192,19 +192,25 @@ for c = 3, 0, -1 do
 	TL_CF.Text = "Chargement du cheat, veuillez attendre ".. c .." secs..."
 end
 
+local sound = Instance.new("Sound")
+sound.Parent = Gui
+sound.SoundId = "rbxassetid://6586979979"
+sound.Volume = 1
+
 function LoadPlayerTab()
 	for index, plr in game.Players:GetChildren() do
+		for _, a in Gui.TemplateFrame:GetChildren() do
+			if a:IsA("Frame") then
+				a:Destroy()
+			end
+		end
+		
 		local child = Gui.TemplateFrame:Clone()
 		child.Parent = SF2_SF
 		child.Size = UDim2.new(1.5, 0, 0.022, 0)
 		child.Name = plr.Name
 		child.TextButton.Text = plr.Name
 		child.ImageLabel.Image = game.Players:GetUserThumbnailAsync(plr.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
-
-		local sound = Instance.new("Sound")
-		sound.Parent = Gui
-		sound.SoundId = "rbxassetid://6586979979"
-		sound.Volume = 1
 
 		local TSInfo = TweenInfo.new(0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
 		local anim = TS:Create(child, TSInfo, {Size = UDim2.new(1, 0, 0.011, 0)})
@@ -220,28 +226,7 @@ function LoadPlayerTab()
 end
 
 game.Players.PlayerAdded:Connect(function(NewPlayer)
-	local child = Gui.TemplateFrame:Clone()
-	child.Parent = SF2_SF
-	child.Size = UDim2.new(1.5, 0, 0.022, 0)
-	child.Name = NewPlayer.Name
-	child.TextButton.Text = NewPlayer.Name
-	child.ImageLabel.Image = game.Players:GetUserThumbnailAsync(NewPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
-
-	local sound = Instance.new("Sound")
-	sound.Parent = Gui
-	sound.SoundId = "rbxassetid://6586979979"
-	sound.Volume = 1
-
-	local TSInfo = TweenInfo.new(0.2, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-	local anim = TS:Create(child, TSInfo, {Size = UDim2.new(1, 0, 0.011, 0)})
-	child.Visible = true
-	anim:Play()
-	sound:Play()
-	anim.Completed:Wait()
-
-	child.TextButton.MouseButton1Click:Connect(function()
-		plrCam.CameraSubject = game.Players[child.Name].Character
-	end)
+	LoadPlayerTab()
 	
 	NewPlayer.CharacterAdded:Connect(function(character)
 		if canLoad then
