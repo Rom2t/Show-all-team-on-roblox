@@ -14,6 +14,8 @@ _ = liaison de deux termes, ex: US_TL_CF signifie UiStroke_TextLabel_ChargementF
 
 local TS = game:GetService("TweenService")
 local UIS = game:GetService("UserInputService")
+local Selected = nil
+local plr = game.Players.LocalPlayer
 
 local Gui = Instance.new("ScreenGui")
 Gui.Parent = game.Players.LocalPlayer.PlayerGui
@@ -183,7 +185,7 @@ function LoadCheat()
 			end
 		end
 	end
-
+	
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/Freecam.lua"))()
 	
 	TL_CF.Text = "Chargement finit."
@@ -192,7 +194,7 @@ end
 
 for c = 3, 0, -1 do
 	wait(1)
-	TL_CF.Text = "Chargement du cheat, veuillez attendre ".. c .." secs..."
+	TL_CF.Text = "Chargement des ressources, veuillez patientez ".. c .." secs..."
 end
 
 local sound = Instance.new("Sound")
@@ -274,6 +276,7 @@ for _, UserFrame in SF2_SF:GetChildren() do
 	if UserFrame:IsA("Frame") then
 		UserFrame.TextButton.MouseButton1Click:Connect(function()
 			plrCam.CameraSubject = game.Players[UserFrame.Name].Character
+			Selected = game.Players[UserFrame.Name].Character
 		end)
 	end
 end
@@ -290,6 +293,13 @@ UIS.InputBegan:Connect(function(input)
 			SF.Visible = false
 		else
 			SF.Visible = true
+		end
+	end
+	
+	
+	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+		if Selected ~= nil then
+			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
 		end
 	end
 end)
