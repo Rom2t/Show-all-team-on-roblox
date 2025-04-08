@@ -9,11 +9,21 @@ IB = ImageButton
 SF = SearchFrame
 SF2 = ScrollingFrame
 UILL = UIListLayout
+IF = InformationFrame
+IF2 = InventoryFrame
+TF2 = TeamFreame2
+NF = NameFrame
+IDF = IDFrame
+XPF = XPFrame
+HF = HealthFrame
+CL = ContentLabel
+IL2 = InformationLabel
 _ = liaison de deux termes, ex: US_TL_CF signifie UiStroke_TextLabel_ChargementFrame
 ]]
 
 local TS = game:GetService("TweenService")
 local UIS = game:GetService("UserInputService")
+local RS = game:GetService("RunService")
 local Selected = nil
 local plr = game.Players.LocalPlayer
 
@@ -124,6 +134,62 @@ SF2_SF.CanvasSize = UDim2.new(0, 0, 7, 0)
 local UILL_SF2_SF = Instance.new("UIListLayout")
 UILL_SF2_SF.Parent = SF2_SF
 UILL_SF2_SF.SortOrder = Enum.SortOrder.Name
+
+-------------------------------------------------------------------------------------------
+
+local IF = Instance.new("Frame")
+IF.Parent = Gui
+IF.BackgroundTransparency = 0.5
+IF.AnchorPoint = Vector2.new(0.5, 0)
+IF.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+IF.Position = UDim2.new(0.81, 0, 0.225, 0)
+IF.Size = UDim2.new(0.227, 0, 0.655, 0)
+IF.Visible = false
+
+local US_IF = Instance.new("UIStroke")
+US_IF.Parent = IF
+US_IF.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+US_IF.Thickness = 2
+
+local SF2_IF = Instance.new("ScrollingFrame")
+SF2_IF.Parent = IF
+SF2_IF.BackgroundTransparency = 1
+SF2_IF.Position = UDim2.new(0, 0, 0, 0)
+SF2_IF.Size = UDim2.new(1, 0, 1, 0)
+SF2_IF.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+SF2_IF.ScrollBarThickness = 0
+
+local UILL_SF2_IF = Instance.new("UIListLayout")
+UILL_SF2_IF.Parent = SF2_IF
+UILL_SF2_IF.SortOrder = Enum.SortOrder.LayoutOrder
+
+local NF_SF2_IF = Instance.new("Frame")
+NF_SF2_IF.Parent = SF2_IF
+NF_SF2_IF.BackgroundTransparency = 1
+NF_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+NF_SF2_IF.LayoutOrder = 1
+
+local IL2_NF_SF2_IF = Instance.new("TextLabel")
+IL2_NF_SF2_IF.Parent = NF_SF2_IF
+IL2_NF_SF2_IF.BackgroundTransparency = 1
+IL2_NF_SF2_IF.Size = UDim2.new(0.4, 0, 1, 0)
+IL2_NF_SF2_IF.Font = Enum.Font.Nunito
+IL2_NF_SF2_IF.Text = "Name:"
+IL2_NF_SF2_IF.TextScaled = true
+IL2_NF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_NF_SF2_IF.TextStrokeTransparency = 0
+IL2_NF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_NF_SF2_IF = Instance.new("TextLabel")
+CL_NF_SF2_IF.Parent = NF_SF2_IF
+CL_NF_SF2_IF.BackgroundTransparency = 1
+CL_NF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
+CL_NF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
+CL_NF_SF2_IF.Font = Enum.Font.Nunito
+CL_NF_SF2_IF.Text = "R0R021120"
+CL_NF_SF2_IF.TextScaled = true
+
+-------------------------------------------------------------------------------------------
 
 function LoadCheat()
 	canLoad = false
@@ -301,6 +367,30 @@ UIS.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
+		end
+	end
+end)
+
+local function MouseRaycast(model)
+	local mousePosition = UIS:GetMouseLocation()
+	local mouseRay = plrCam:ViewportPointToRay(mousePosition.X, mousePosition.Y)
+	local raycastParams = RaycastParams.new()
+	
+	raycastParams.FilterType = Enum.RaycastFilterType.Exclude
+
+	local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
+	
+	return raycastResult
+end
+
+RS.RenderStepped:Connect(function()
+	local result = MouseRaycast()
+	if result and result.Instance then
+		if result.Instance.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= plr and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= nil then
+			IF.Visible = true
+			CL_NF_SF2_IF.Text = game.Players:GetPlayerFromCharacter(result.Instance.Parent).Name
+		else
+			IF.Visible = false
 		end
 	end
 end)
