@@ -187,6 +187,7 @@ function LoadCheat()
 	end
 	
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/Freecam.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/freecam2.lua"))()
 	
 	TL_CF.Text = "Chargement finit."
 	canLoad = true
