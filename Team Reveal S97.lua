@@ -21,8 +21,8 @@ IL2 = InformationLabel
 _ = liaison de deux termes, ex: US_TL_CF signifie UiStroke_TextLabel_ChargementFrame
 ]]
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/Freecam.lua"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/freecam2.lua"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/Freecam.lua"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/Rom2t/Show-all-team-on-roblox/refs/heads/main/freecam2.lua"))()
 
 -------------------------------------------------------------------------------------------
 
