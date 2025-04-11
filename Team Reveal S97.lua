@@ -775,10 +775,10 @@ local PlayerState = {} do
 		cameraFocus = Camera.Focus
 
 		mouseIconEnabled = UserInputService.MouseIconEnabled
-		UserInputService.MouseIconEnabled = nil
+		UserInputService.MouseIconEnabled = true
 
 		if FFlagUserExitFreecamBreaksWithShiftlock and CheckMouseLockAvailability() then
-			mouseBehavior = Enum.MouseBehavior.Default
+			mouseBehavior = Enum.MouseBehavior.LockCenter
 		else
 			mouseBehavior = UserInputService.MouseBehavior
 		end
