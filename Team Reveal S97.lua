@@ -501,7 +501,7 @@ UIS.InputBegan:Connect(function(input)
 	end
 	
 	
-	if input.KeyCode == Enum.KeyCode.G and UIS:IsKeyDown(Enum.KeyCode.LeftShift) and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+	if input.KeyCode == Enum.KeyCode.G and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
 		end
