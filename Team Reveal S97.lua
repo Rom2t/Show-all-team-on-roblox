@@ -193,6 +193,110 @@ CL_NF_SF2_IF.Font = Enum.Font.Nunito
 CL_NF_SF2_IF.Text = "R0R021120"
 CL_NF_SF2_IF.TextScaled = true
 
+local IDF_SF2_IF = Instance.new("Frame")
+IDF_SF2_IF.Parent = SF2_IF
+IDF_SF2_IF.BackgroundTransparency = 1
+IDF_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+IDF_SF2_IF.LayoutOrder = 2
+
+local IL2_IDF_SF2_IF = Instance.new("TextLabel")
+IL2_IDF_SF2_IF.Parent = IDF_SF2_IF
+IL2_IDF_SF2_IF.BackgroundTransparency = 1
+IL2_IDF_SF2_IF.Size = UDim2.new(0.4, 0, 1, 0)
+IL2_IDF_SF2_IF.Font = Enum.Font.Nunito
+IL2_IDF_SF2_IF.Text = "ID:"
+IL2_IDF_SF2_IF.TextScaled = true
+IL2_IDF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_IDF_SF2_IF.TextStrokeTransparency = 0
+IL2_IDF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_IDF_SF2_IF = Instance.new("TextLabel")
+CL_IDF_SF2_IF.Parent = IDF_SF2_IF
+CL_IDF_SF2_IF.BackgroundTransparency = 1
+CL_IDF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
+CL_IDF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
+CL_IDF_SF2_IF.Font = Enum.Font.Nunito
+CL_IDF_SF2_IF.Text = "2547876350"
+CL_IDF_SF2_IF.TextScaled = true
+
+local TF2_SF2_IF = Instance.new("Frame")
+TF2_SF2_IF.Parent = SF2_IF
+TF2_SF2_IF.BackgroundTransparency = 1
+TF2_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+TF2_SF2_IF.LayoutOrder = 3
+
+local IL2_TF2_SF2_IF = Instance.new("TextLabel")
+IL2_TF2_SF2_IF.Parent = TF2_SF2_IF
+IL2_TF2_SF2_IF.BackgroundTransparency = 1
+IL2_TF2_SF2_IF.Size = UDim2.new(0.4, 0, 1, 0)
+IL2_TF2_SF2_IF.Font = Enum.Font.Nunito
+IL2_TF2_SF2_IF.Text = "Team:"
+IL2_TF2_SF2_IF.TextScaled = true
+IL2_TF2_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_TF2_SF2_IF.TextStrokeTransparency = 0
+IL2_TF2_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_TF2_SF2_IF = Instance.new("TextLabel")
+CL_TF2_SF2_IF.Parent = TF2_SF2_IF
+CL_TF2_SF2_IF.BackgroundTransparency = 1
+CL_TF2_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
+CL_TF2_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
+CL_TF2_SF2_IF.Font = Enum.Font.Nunito
+CL_TF2_SF2_IF.Text = "Classe-Delta"
+CL_TF2_SF2_IF.TextScaled = true
+
+local XPF_SF2_IF = Instance.new("Frame")
+XPF_SF2_IF.Parent = SF2_IF
+XPF_SF2_IF.BackgroundTransparency = 1
+XPF_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+XPF_SF2_IF.LayoutOrder = 4
+
+local IL2_XPF_SF2_IF = Instance.new("TextLabel")
+IL2_XPF_SF2_IF.Parent = XPF_SF2_IF
+IL2_XPF_SF2_IF.BackgroundTransparency = 1
+IL2_XPF_SF2_IF.Size = UDim2.new(0.4, 0, 1, 0)
+IL2_XPF_SF2_IF.Font = Enum.Font.Nunito
+IL2_XPF_SF2_IF.Text = "XP:"
+IL2_XPF_SF2_IF.TextScaled = true
+IL2_XPF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_XPF_SF2_IF.TextStrokeTransparency = 0
+IL2_XPF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_XPF_SF2_IF = Instance.new("TextLabel")
+CL_XPF_SF2_IF.Parent = XPF_SF2_IF
+CL_XPF_SF2_IF.BackgroundTransparency = 1
+CL_XPF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
+CL_XPF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
+CL_XPF_SF2_IF.Font = Enum.Font.Nunito
+CL_XPF_SF2_IF.Text = "900000"
+CL_XPF_SF2_IF.TextScaled = true
+
+local HF_SF2_IF = Instance.new("Frame")
+HF_SF2_IF.Parent = SF2_IF
+HF_SF2_IF.BackgroundTransparency = 1
+HF_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+HF_SF2_IF.LayoutOrder = 5
+
+local IL2_HF_SF2_IF = Instance.new("TextLabel")
+IL2_HF_SF2_IF.Parent = HF_SF2_IF
+IL2_HF_SF2_IF.BackgroundTransparency = 1
+IL2_HF_SF2_IF.Size = UDim2.new(0.4, 0, 1, 0)
+IL2_HF_SF2_IF.Font = Enum.Font.Nunito
+IL2_HF_SF2_IF.Text = "Health:"
+IL2_HF_SF2_IF.TextScaled = true
+IL2_HF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_HF_SF2_IF.TextStrokeTransparency = 0
+IL2_HF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_HF_SF2_IF = Instance.new("TextLabel")
+CL_HF_SF2_IF.Parent = HF_SF2_IF
+CL_HF_SF2_IF.BackgroundTransparency = 1
+CL_HF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
+CL_HF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
+CL_HF_SF2_IF.Font = Enum.Font.Nunito
+CL_HF_SF2_IF.Text = "100/100"
+CL_HF_SF2_IF.TextScaled = true
+
 -------------------------------------------------------------------------------------------
 
 function LoadCheat()
@@ -384,12 +488,27 @@ local function MouseRaycast(model)
 	return raycastResult
 end
 
+local plrCible: Player = nil
+
+function LoadInformation()
+	CL_NF_SF2_IF.Text = plrCible.Name
+	CL_IDF_SF2_IF.Text = plrCible.UserId
+	CL_TF2_SF2_IF.Text = plrCible.Team.Name
+	CL_XPF_SF2_IF.Text = plrCible:FindFirstChild("leaderstats"):FindFirstChild("xp").Value
+	CL_HF_SF2_IF.Text = tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").Health) .. "/" .. tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").MaxHealth)
+end
+
 RS.RenderStepped:Connect(function()
 	local result = MouseRaycast()
 	if result and result.Instance then
 		if result.Instance.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= plr and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= nil then
+			plrCible = game.Players:GetPlayerFromCharacter(result.Instance.Parent)
 			IF.Visible = true
-			CL_NF_SF2_IF.Text = game.Players:GetPlayerFromCharacter(result.Instance.Parent).Name
+			LoadInformation()
+		elseif result.Instance.Parent.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent) ~= plr and game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent) ~= nil then
+			plrCible = game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent)
+			IF.Visible = true
+			LoadInformation()
 		else
 			IF.Visible = false
 		end
