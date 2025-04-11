@@ -297,6 +297,32 @@ CL_HF_SF2_IF.Font = Enum.Font.Nunito
 CL_HF_SF2_IF.Text = "100/100"
 CL_HF_SF2_IF.TextScaled = true
 
+local IF2_SF2_IF = Instance.new("Frame")
+IF2_SF2_IF.Parent = SF2_IF
+IF2_SF2_IF.BackgroundTransparency = 1
+IF2_SF2_IF.Size = UDim2.new(1, 0, 0.1, 0)
+IF2_SF2_IF.LayoutOrder = 6
+
+local IL2_IF2_SF2_IF = Instance.new("TextLabel")
+IL2_IF2_SF2_IF.Parent = IF2_SF2_IF
+IL2_IF2_SF2_IF.BackgroundTransparency = 1
+IL2_IF2_SF2_IF.Size = UDim2.new(1, 0, 1, 0)
+IL2_IF2_SF2_IF.Font = Enum.Font.Nunito
+IL2_IF2_SF2_IF.Text = "Inventory:"
+IL2_IF2_SF2_IF.TextScaled = true
+IL2_IF2_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
+IL2_IF2_SF2_IF.TextStrokeTransparency = 0
+IL2_IF2_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+
+local CL_IF2_SF2_IF = Instance.new("TextLabel")
+CL_IF2_SF2_IF.Parent = IF2_SF2_IF
+CL_IF2_SF2_IF.BackgroundTransparency = 1
+CL_IF2_SF2_IF.Position = UDim2.new(0, 0, 1, 0)
+CL_IF2_SF2_IF.Size = UDim2.new(1, 0, 4, 0)
+CL_IF2_SF2_IF.Font = Enum.Font.Nunito
+CL_IF2_SF2_IF.Text = "- Carte [AIT]\n- L85A2\n- Menotte\n- Tablette\n- Café\n- Plateau Repas\n- Radio"
+CL_IF2_SF2_IF.TextScaled = true
+
 -------------------------------------------------------------------------------------------
 
 function LoadCheat()
@@ -454,22 +480,28 @@ for _, UserFrame in SF2_SF:GetChildren() do
 end
 
 UIS.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.Up then
+	if input.KeyCode == Enum.KeyCode.L and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if CF.Visible then
 			CF.Visible = false
 		else
 			CF.Visible = true
 		end
-	elseif input.KeyCode == Enum.KeyCode.Left then
+	elseif input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if SF.Visible then
 			SF.Visible = false
+		else
+			SF.Visible = true
+		end
+	elseif input.KeyCode == Enum.KeyCode.R and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+		if IF.Visible then
+			IF.Visible = false
 		else
 			SF.Visible = true
 		end
 	end
 	
 	
-	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
 		end
@@ -496,6 +528,17 @@ function LoadInformation()
 	CL_TF2_SF2_IF.Text = plrCible.Team.Name
 	CL_XPF_SF2_IF.Text = plrCible:FindFirstChild("leaderstats"):FindFirstChild("xp").Value
 	CL_HF_SF2_IF.Text = tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").Health) .. "/" .. tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").MaxHealth)
+	CL_IF2_SF2_IF.Text = ""
+	for _, i in plrCible.Backpack:GetChildren() do
+		if i:IsA("Tool") then
+			CL_IF2_SF2_IF.Text = CL_IF2_SF2_IF.Text .. "- " .. i.Name .. "\n"
+		end
+	end
+	for _, i in plrCible.Character:GetChildren() do
+		if i:IsA("Tool") then
+			CL_IF2_SF2_IF.Text = CL_IF2_SF2_IF.Text .. "- " .. i.Name .. "\n"
+		end
+	end
 end
 
 RS.RenderStepped:Connect(function()
@@ -510,7 +553,7 @@ RS.RenderStepped:Connect(function()
 			IF.Visible = true
 			LoadInformation()
 		else
-			IF.Visible = false
+			--IF.Visible = false
 		end
 	end
 end)
