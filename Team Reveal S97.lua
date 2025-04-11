@@ -778,13 +778,11 @@ local PlayerState = {} do
 		UserInputService.MouseIconEnabled = nil
 
 		if FFlagUserExitFreecamBreaksWithShiftlock and CheckMouseLockAvailability() then
-			print("!")
 			mouseBehavior = Enum.MouseBehavior.Default
 		else
-			print("a")
 			mouseBehavior = UserInputService.MouseBehavior
 		end
-		UserInputService.MouseBehavior = Enum.MouseBehavior.Default
+		UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
 	end
 
 	-- Restore state
@@ -912,4 +910,12 @@ do
 			end
 		end)
 	end
-			end
+end
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
+
+-- FREECAM (Shift+P)
+
+------------------------------------------------------------------------
+------------------------------------------------------------------------
