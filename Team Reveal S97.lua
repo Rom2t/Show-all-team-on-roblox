@@ -480,13 +480,13 @@ for _, UserFrame in SF2_SF:GetChildren() do
 end
 
 UIS.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.L and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if CF.Visible then
 			CF.Visible = false
 		else
 			CF.Visible = true
 		end
-	elseif input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+	elseif input.KeyCode == Enum.KeyCode.L and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if SF.Visible then
 			SF.Visible = false
 		else
@@ -496,12 +496,12 @@ UIS.InputBegan:Connect(function(input)
 		if IF.Visible then
 			IF.Visible = false
 		else
-			SF.Visible = true
+			IF.Visible = true
 		end
 	end
 	
 	
-	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
+	if input.KeyCode == Enum.KeyCode.G and UIS:IsKeyDown(Enum.KeyCode.LeftShift) and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
 		end
