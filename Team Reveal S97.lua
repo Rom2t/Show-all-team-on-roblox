@@ -183,6 +183,7 @@ IL2_NF_SF2_IF.TextScaled = true
 IL2_NF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_NF_SF2_IF.TextStrokeTransparency = 0
 IL2_NF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_NF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_NF_SF2_IF = Instance.new("TextLabel")
 CL_NF_SF2_IF.Parent = NF_SF2_IF
@@ -192,6 +193,7 @@ CL_NF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_NF_SF2_IF.Font = Enum.Font.Nunito
 CL_NF_SF2_IF.Text = "R0R021120"
 CL_NF_SF2_IF.TextScaled = true
+CL_NF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local IDF_SF2_IF = Instance.new("Frame")
 IDF_SF2_IF.Parent = SF2_IF
@@ -209,6 +211,7 @@ IL2_IDF_SF2_IF.TextScaled = true
 IL2_IDF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_IDF_SF2_IF.TextStrokeTransparency = 0
 IL2_IDF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_IDF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_IDF_SF2_IF = Instance.new("TextLabel")
 CL_IDF_SF2_IF.Parent = IDF_SF2_IF
@@ -218,6 +221,7 @@ CL_IDF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_IDF_SF2_IF.Font = Enum.Font.Nunito
 CL_IDF_SF2_IF.Text = "2547876350"
 CL_IDF_SF2_IF.TextScaled = true
+CL_IDF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local TF2_SF2_IF = Instance.new("Frame")
 TF2_SF2_IF.Parent = SF2_IF
@@ -235,6 +239,7 @@ IL2_TF2_SF2_IF.TextScaled = true
 IL2_TF2_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_TF2_SF2_IF.TextStrokeTransparency = 0
 IL2_TF2_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_TF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_TF2_SF2_IF = Instance.new("TextLabel")
 CL_TF2_SF2_IF.Parent = TF2_SF2_IF
@@ -244,6 +249,7 @@ CL_TF2_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_TF2_SF2_IF.Font = Enum.Font.Nunito
 CL_TF2_SF2_IF.Text = "Classe-Delta"
 CL_TF2_SF2_IF.TextScaled = true
+CL_TF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local XPF_SF2_IF = Instance.new("Frame")
 XPF_SF2_IF.Parent = SF2_IF
@@ -261,6 +267,7 @@ IL2_XPF_SF2_IF.TextScaled = true
 IL2_XPF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_XPF_SF2_IF.TextStrokeTransparency = 0
 IL2_XPF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_XPF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_XPF_SF2_IF = Instance.new("TextLabel")
 CL_XPF_SF2_IF.Parent = XPF_SF2_IF
@@ -268,8 +275,9 @@ CL_XPF_SF2_IF.BackgroundTransparency = 1
 CL_XPF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
 CL_XPF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_XPF_SF2_IF.Font = Enum.Font.Nunito
-CL_XPF_SF2_IF.Text = "900000"
+CL_XPF_SF2_IF.Text = "900000 XP"
 CL_XPF_SF2_IF.TextScaled = true
+CL_XPF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local HF_SF2_IF = Instance.new("Frame")
 HF_SF2_IF.Parent = SF2_IF
@@ -287,6 +295,7 @@ IL2_HF_SF2_IF.TextScaled = true
 IL2_HF_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_HF_SF2_IF.TextStrokeTransparency = 0
 IL2_HF_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_HF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_HF_SF2_IF = Instance.new("TextLabel")
 CL_HF_SF2_IF.Parent = HF_SF2_IF
@@ -294,8 +303,9 @@ CL_HF_SF2_IF.BackgroundTransparency = 1
 CL_HF_SF2_IF.Position = UDim2.new(0.4, 0, 0, 0)
 CL_HF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_HF_SF2_IF.Font = Enum.Font.Nunito
-CL_HF_SF2_IF.Text = "100/100"
+CL_HF_SF2_IF.Text = "100/100 HP"
 CL_HF_SF2_IF.TextScaled = true
+CL_HF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local IF2_SF2_IF = Instance.new("Frame")
 IF2_SF2_IF.Parent = SF2_IF
@@ -312,7 +322,8 @@ IL2_IF2_SF2_IF.Text = "Inventory:"
 IL2_IF2_SF2_IF.TextScaled = true
 IL2_IF2_SF2_IF.TextStrokeColor3 = Color3.new(255, 255, 255)
 IL2_IF2_SF2_IF.TextStrokeTransparency = 0
-IL2_IF2_SF2_IF.TextXAlignment = Enum.TextXAlignment.Left
+IL2_IF2_SF2_IF.TextXAlignment = Enum.TextXAlignment.Center
+IL2_IF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 local CL_IF2_SF2_IF = Instance.new("TextLabel")
 CL_IF2_SF2_IF.Parent = IF2_SF2_IF
@@ -322,6 +333,7 @@ CL_IF2_SF2_IF.Size = UDim2.new(1, 0, 4, 0)
 CL_IF2_SF2_IF.Font = Enum.Font.Nunito
 CL_IF2_SF2_IF.Text = "- Carte [AIT]\n- L85A2\n- Menotte\n- Tablette\n- Café\n- Plateau Repas\n- Radio"
 CL_IF2_SF2_IF.TextScaled = true
+CL_IF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
 
 -------------------------------------------------------------------------------------------
 
@@ -508,6 +520,16 @@ UIS.InputBegan:Connect(function(input)
 	end
 end)
 
+UIS.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseWheel and IF.Visible then
+		if input.Position.Z > 0 then
+			SF2_IF.CanvasPosition -= Vector2.new(0, 140)
+		else
+			SF2_IF.CanvasPosition += Vector2.new(0, 140)
+		end
+	end
+end)
+
 local function MouseRaycast(model)
 	local mousePosition = UIS:GetMouseLocation()
 	local mouseRay = plrCam:ViewportPointToRay(mousePosition.X, mousePosition.Y)
@@ -526,8 +548,8 @@ function LoadInformation()
 	CL_NF_SF2_IF.Text = plrCible.Name
 	CL_IDF_SF2_IF.Text = plrCible.UserId
 	CL_TF2_SF2_IF.Text = plrCible.Team.Name
-	CL_XPF_SF2_IF.Text = plrCible:FindFirstChild("leaderstats"):FindFirstChild("xp").Value
-	CL_HF_SF2_IF.Text = tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").Health) .. "/" .. tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").MaxHealth)
+	CL_XPF_SF2_IF.Text = tostring(plrCible:FindFirstChild("leaderstats"):FindFirstChild("xp").Value) .. " XP"
+	CL_HF_SF2_IF.Text = tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").Health) .. "/" .. tostring(plrCible.Character:FindFirstChildWhichIsA("Humanoid").MaxHealth) .. " HP"
 	CL_IF2_SF2_IF.Text = ""
 	for _, i in plrCible.Backpack:GetChildren() do
 		if i:IsA("Tool") then
@@ -623,13 +645,11 @@ local FREECAM_MACRO_KB = {Enum.KeyCode.LeftShift, Enum.KeyCode.P}
 
 local NAV_GAIN = Vector3.new(1, 1, 1)*64
 local PAN_GAIN = Vector2.new(0.75, 1)*8
-local FOV_GAIN = 300
 
 local PITCH_LIMIT = rad(90)
 
 local VEL_STIFFNESS = 1.5
 local PAN_STIFFNESS = 1.0
-local FOV_STIFFNESS = 4.0
 
 ------------------------------------------------------------------------
 
@@ -671,11 +691,9 @@ end
 
 local cameraPos = Vector3.new()
 local cameraRot = Vector2.new()
-local cameraFov = 0
 
 local velSpring = Spring.new(VEL_STIFFNESS, Vector3.new())
 local panSpring = Spring.new(PAN_STIFFNESS, Vector2.new())
-local fovSpring = Spring.new(FOV_STIFFNESS, 0)
 
 ------------------------------------------------------------------------
 
@@ -736,8 +754,6 @@ local Input = {} do
 	local NAV_KEYBOARD_SPEED = Vector3.new(1, 1, 1)
 	local PAN_MOUSE_SPEED    = Vector2.new(1, 1)*(pi/64)
 	local PAN_GAMEPAD_SPEED  = Vector2.new(1, 1)*(pi/8)
-	local FOV_WHEEL_SPEED    = 1.0
-	local FOV_GAMEPAD_SPEED  = 0.25
 	local NAV_ADJ_SPEED      = 0.75
 	local NAV_SHIFT_MUL      = 0.25
 
@@ -773,13 +789,6 @@ local Input = {} do
 		return kGamepad + kMouse
 	end
 
-	function Input.Fov(dt)
-		local kGamepad = (gamepad.ButtonX - gamepad.ButtonY)*FOV_GAMEPAD_SPEED
-		local kMouse = mouse.MouseWheel*FOV_WHEEL_SPEED
-		mouse.MouseWheel = 0
-		return kGamepad + kMouse
-	end
-
 	do
 		local function Keypress(action, state, input)
 			keyboard[input.KeyCode.Name] = state == Enum.UserInputState.Begin and 1 or 0
@@ -807,11 +816,6 @@ local Input = {} do
 			return Enum.ContextActionResult.Sink
 		end
 
-		local function MouseWheel(action, state, input)
-			mouse[input.UserInputType.Name] = -input.Position.z
-			return Enum.ContextActionResult.Sink
-		end
-
 		local function Zero(t)
 			for k, v in pairs(t) do
 				t[k] = v*0
@@ -829,7 +833,6 @@ local Input = {} do
 				Enum.KeyCode.Up, Enum.KeyCode.Down
 			)
 			ContextActionService:BindActionAtPriority("FreecamMousePan",          MousePan,   false, INPUT_PRIORITY, Enum.UserInputType.MouseMovement)
-			ContextActionService:BindActionAtPriority("FreecamMouseWheel",        MouseWheel, false, INPUT_PRIORITY, Enum.UserInputType.MouseWheel)
 			ContextActionService:BindActionAtPriority("FreecamGamepadButton",     GpButton,   false, INPUT_PRIORITY, Enum.KeyCode.ButtonX, Enum.KeyCode.ButtonY)
 			ContextActionService:BindActionAtPriority("FreecamGamepadTrigger",    Trigger,    false, INPUT_PRIORITY, Enum.KeyCode.ButtonR2, Enum.KeyCode.ButtonL2)
 			ContextActionService:BindActionAtPriority("FreecamGamepadThumbstick", Thumb,      false, INPUT_PRIORITY, Enum.KeyCode.Thumbstick1, Enum.KeyCode.Thumbstick2)
@@ -842,7 +845,6 @@ local Input = {} do
 			Zero(mouse)
 			ContextActionService:UnbindAction("FreecamKeyboard")
 			ContextActionService:UnbindAction("FreecamMousePan")
-			ContextActionService:UnbindAction("FreecamMouseWheel")
 			ContextActionService:UnbindAction("FreecamGamepadButton")
 			ContextActionService:UnbindAction("FreecamGamepadTrigger")
 			ContextActionService:UnbindAction("FreecamGamepadThumbstick")
@@ -855,12 +857,8 @@ end
 local function StepFreecam(dt)
 	local vel = velSpring:Update(dt, Input.Vel(dt))
 	local pan = panSpring:Update(dt, Input.Pan(dt))
-	local fov = fovSpring:Update(dt, Input.Fov(dt))
 
-	local zoomFactor = sqrt(tan(rad(70/2))/tan(rad(cameraFov/2)))
-
-	cameraFov = clamp(cameraFov + fov*FOV_GAIN*(dt/zoomFactor), 1, 120)
-	cameraRot = cameraRot + pan*PAN_GAIN*(dt/zoomFactor)
+	cameraRot = cameraRot + pan*PAN_GAIN*(dt)
 	cameraRot = Vector2.new(clamp(cameraRot.x, -PITCH_LIMIT, PITCH_LIMIT), cameraRot.y%(2*pi))
 
 	local cameraCFrame = CFrame.new(cameraPos)*CFrame.fromOrientation(cameraRot.x, cameraRot.y, 0)*CFrame.new(vel*NAV_GAIN*dt)
@@ -868,7 +866,6 @@ local function StepFreecam(dt)
 
 	Camera.CFrame = cameraCFrame
 	Camera.Focus = cameraCFrame 
-	Camera.FieldOfView = cameraFov
 end
 
 local function CheckMouseLockAvailability()
@@ -994,11 +991,9 @@ local function StartFreecam()
 	local cameraCFrame = Camera.CFrame
 	cameraRot = Vector2.new(cameraCFrame:toEulerAnglesYXZ())
 	cameraPos = cameraCFrame.p
-	cameraFov = Camera.FieldOfView
 
 	velSpring:Reset(Vector3.new())
 	panSpring:Reset(Vector2.new())
-	fovSpring:Reset(0)
 
 	PlayerState.Push()
 	RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
