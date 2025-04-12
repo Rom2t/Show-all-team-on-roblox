@@ -603,11 +603,11 @@ RS.RenderStepped:Connect(function()
 	if result and result.Instance then
 		if result.Instance.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= plr and game.Players:GetPlayerFromCharacter(result.Instance.Parent) ~= nil then
 			plrCible = game.Players:GetPlayerFromCharacter(result.Instance.Parent)
-			IF.Visible = true
+			--IF.Visible = true
 			LoadInformation()
 		elseif result.Instance.Parent.Parent:FindFirstChild("Humanoid") and game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent) ~= plr and game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent) ~= nil then
 			plrCible = game.Players:GetPlayerFromCharacter(result.Instance.Parent.Parent)
-			IF.Visible = true
+			--IF.Visible = true
 			LoadInformation()
 		else
 			--IF.Visible = false
