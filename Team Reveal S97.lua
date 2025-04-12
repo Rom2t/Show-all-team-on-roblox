@@ -25,6 +25,7 @@ local TS = game:GetService("TweenService")
 local UIS = game:GetService("UserInputService")
 local RS = game:GetService("RunService")
 local Selected = nil
+local Loaded = false
 local plr = game.Players.LocalPlayer
 
 local Gui = Instance.new("ScreenGui")
@@ -354,6 +355,8 @@ function LoadCheat()
 		wait(0.3)
 	end
 	
+	Loaded = false
+	
 	for _, i in game.Players:GetChildren() do
 		print(i.Name, i.Team)
 		if i ~= nil and game.workspace:FindFirstChild(i.Name) ~= nil then
@@ -397,6 +400,8 @@ function LoadCheat()
 			end
 		end
 	end
+	
+	Loaded = true
 	
 	TL_CF.Text = "Chargement finit."
 	canLoad = true
@@ -491,6 +496,8 @@ for _, UserFrame in SF2_SF:GetChildren() do
 	end
 end
 
+local active = true
+
 UIS.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.T and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if CF.Visible then
@@ -516,6 +523,34 @@ UIS.InputBegan:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.G and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
+		end
+	end
+	
+	plr:FindFirstChildWhichIsA("Highlight")
+	
+	if  input.KeyCode == Enum.KeyCode.E and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+		if Loaded then
+			for _, i in game.Players:GetChildren() do
+				if i ~= nil and game.workspace:FindFirstChild(i.Name) ~= nil then
+					if game.Workspace:FindFirstChild(i.Name):FindFirstChild("Head") ~= nil then
+						for a, b in game.workspace[i.Name].Head:GetChildren() do
+							if b:IsA("BillboardGui") and b.Name == "BillboardGui" then
+								local Highlight: Highlight = b.Parent.Parent:FindFirstChildWhichIsA("Highlight")
+								local BGui: BillboardGui = b
+								if active then
+									Highlight.Enabled = false
+									BGui.Enabled = false
+									active = false
+								else
+									Highlight.Enabled = true
+									BGui.Enabled = true
+									active = true
+								end
+							end
+						end
+					end
+				end
+			end
 		end
 	end
 end)
@@ -1068,11 +1103,3 @@ do
 		end)
 	end
 end
-
-------------------------------------------------------------------------
-------------------------------------------------------------------------
-
--- FREECAM (Shift+P)
-
-------------------------------------------------------------------------
-------------------------------------------------------------------------
