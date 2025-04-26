@@ -31,6 +31,7 @@ local plr = game.Players.LocalPlayer
 local Gui = Instance.new("ScreenGui")
 Gui.Parent = game.Players.LocalPlayer.PlayerGui
 Gui.Name = "Rom2t"
+Gui.ResetOnSpawn = false
 
 local plrCam = game.Workspace.CurrentCamera
 
@@ -354,9 +355,9 @@ function LoadCheat()
 		CF.ImageButton.Rotation = 0
 		wait(0.3)
 	end
-	
+
 	Loaded = false
-	
+
 	for _, i in game.Players:GetChildren() do
 		print(i.Name, i.Team)
 		if i ~= nil and game.workspace:FindFirstChild(i.Name) ~= nil then
@@ -367,7 +368,7 @@ function LoadCheat()
 						b:Destroy()
 					end
 				end
-				
+
 				local newHighlight = Instance.new("Highlight")
 				newHighlight.Parent = game.Workspace[i.Name]
 				newHighlight.FillTransparency = 0.8
@@ -376,14 +377,14 @@ function LoadCheat()
 				else 
 					newHighlight.FillColor = Color3.fromRGB(225, 255, 255)
 				end
-				
+
 				local newGui = Instance.new("BillboardGui")
 				newGui.Parent = game.Workspace:FindFirstChild(i.Name):FindFirstChild("Head")
 				newGui.AlwaysOnTop = false
 				newGui.ExtentsOffset = Vector3.new(0, 3, 0)
 				newGui.Size = UDim2.new(0, 200, 0, 50)
 				newGui.MaxDistance = 75
-				
+
 				local text = Instance.new("TextLabel")
 				text.Parent = newGui
 				text.TextScaled = true
@@ -400,9 +401,9 @@ function LoadCheat()
 			end
 		end
 	end
-	
+
 	Loaded = true
-	
+
 	TL_CF.Text = "Chargement finit."
 	canLoad = true
 end
@@ -437,7 +438,7 @@ end
 
 game.Players.PlayerAdded:Connect(function(NewPlayer)
 	if SF2_SF:FindFirstChild(NewPlayer.Name) then
-		
+
 	else
 		local child = Gui.TemplateFrame:Clone()
 		child.Parent = SF2_SF
@@ -453,7 +454,7 @@ game.Players.PlayerAdded:Connect(function(NewPlayer)
 		sound:Play()
 		anim.Completed:Wait()
 	end
-	
+
 	NewPlayer.CharacterAdded:Connect(function(character)
 		if canLoad then
 			LoadCheat()
@@ -518,16 +519,16 @@ UIS.InputBegan:Connect(function(input)
 			IF.Visible = true
 		end
 	end
-	
-	
+
+
 	if input.KeyCode == Enum.KeyCode.G and UIS:IsKeyDown(Enum.KeyCode.LeftControl) then
 		if Selected ~= nil then
 			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = Selected:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0, 3, 0)
 		end
 	end
-	
+
 	plr:FindFirstChildWhichIsA("Highlight")
-	
+
 	if  input.KeyCode == Enum.KeyCode.E and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
 		if Loaded then
 			for _, i in game.Players:GetChildren() do
@@ -569,11 +570,11 @@ local function MouseRaycast(model)
 	local mousePosition = UIS:GetMouseLocation()
 	local mouseRay = plrCam:ViewportPointToRay(mousePosition.X, mousePosition.Y)
 	local raycastParams = RaycastParams.new()
-	
+
 	raycastParams.FilterType = Enum.RaycastFilterType.Exclude
 
 	local raycastResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 1000, raycastParams)
-	
+
 	return raycastResult
 end
 
