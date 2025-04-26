@@ -194,7 +194,7 @@ CL_NF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_NF_SF2_IF.Font = Enum.Font.Nunito
 CL_NF_SF2_IF.Text = "R0R021120"
 CL_NF_SF2_IF.TextScaled = true
-CL_NF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_NF_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 local IDF_SF2_IF = Instance.new("Frame")
 IDF_SF2_IF.Parent = SF2_IF
@@ -222,7 +222,7 @@ CL_IDF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_IDF_SF2_IF.Font = Enum.Font.Nunito
 CL_IDF_SF2_IF.Text = "2547876350"
 CL_IDF_SF2_IF.TextScaled = true
-CL_IDF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_IDF_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 local TF2_SF2_IF = Instance.new("Frame")
 TF2_SF2_IF.Parent = SF2_IF
@@ -250,7 +250,7 @@ CL_TF2_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_TF2_SF2_IF.Font = Enum.Font.Nunito
 CL_TF2_SF2_IF.Text = "Classe-Delta"
 CL_TF2_SF2_IF.TextScaled = true
-CL_TF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_TF2_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 local XPF_SF2_IF = Instance.new("Frame")
 XPF_SF2_IF.Parent = SF2_IF
@@ -278,7 +278,7 @@ CL_XPF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_XPF_SF2_IF.Font = Enum.Font.Nunito
 CL_XPF_SF2_IF.Text = "900000 XP"
 CL_XPF_SF2_IF.TextScaled = true
-CL_XPF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_XPF_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 local HF_SF2_IF = Instance.new("Frame")
 HF_SF2_IF.Parent = SF2_IF
@@ -306,7 +306,7 @@ CL_HF_SF2_IF.Size = UDim2.new(0.6, 0, 1, 0)
 CL_HF_SF2_IF.Font = Enum.Font.Nunito
 CL_HF_SF2_IF.Text = "100/100 HP"
 CL_HF_SF2_IF.TextScaled = true
-CL_HF_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_HF_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 local IF2_SF2_IF = Instance.new("Frame")
 IF2_SF2_IF.Parent = SF2_IF
@@ -334,7 +334,7 @@ CL_IF2_SF2_IF.Size = UDim2.new(1, 0, 4, 0)
 CL_IF2_SF2_IF.Font = Enum.Font.Nunito
 CL_IF2_SF2_IF.Text = "- Carte [AIT]\n- L85A2\n- Menotte\n- Tablette\n- Café\n- Plateau Repas\n- Radio"
 CL_IF2_SF2_IF.TextScaled = true
-CL_IF2_SF2_IF.TextColor3 = Color3.new(0, 0, 0)
+CL_IF2_SF2_IF.TextColor3 = Color3.new(255, 255, 255)
 
 -------------------------------------------------------------------------------------------
 
