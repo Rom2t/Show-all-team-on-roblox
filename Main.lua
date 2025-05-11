@@ -27,6 +27,7 @@ local RS = game:GetService("RunService")
 local Selected = nil
 local Loaded = false
 local plr = game.Players.LocalPlayer
+local FreecamEnabled = false
 
 local Gui = Instance.new("ScreenGui")
 Gui.Parent = game.Players.LocalPlayer.PlayerGui
@@ -554,6 +555,12 @@ UIS.InputBegan:Connect(function(input)
 			end
 		end
 	end
+
+	if  input.KeyCode == Enum.KeyCode.Space and UIS:IsKeyDown(Enum.KeyCode.LeftShift) then
+		if FreecamEnabled then
+			plr.Character:FindFirstChild("HumanoidRootPart").CFrame = game.Workspace.CurrentCamera.CFrame + Vector3.new(0, 3, 0)
+		end
+	end
 end)
 
 UIS.InputChanged:Connect(function(input)
@@ -1034,6 +1041,8 @@ local function StartFreecam()
 	PlayerState.Push()
 	RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
 	Input.StartCapture()
+
+	FreecamEnabled = true
 end
 
 local function StopFreecam()
@@ -1044,6 +1053,8 @@ local function StopFreecam()
 	Input.StopCapture()
 	RunService:UnbindFromRenderStep("Freecam")
 	PlayerState.Pop()
+
+	FreecamEnabled = false
 end
 
 ------------------------------------------------------------------------
